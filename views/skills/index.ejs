@@ -1,0 +1,19 @@
+<!-- SKILLS INDEX.EJS -->
+
+<%- include("../partials/header.ejs") %> 
+  
+<h1>Skills</h1>
+  <% if(error) { %>
+    <h2><%= error %></h2>
+  <% } %>
+  <ul>
+    <% skills.forEach(function(skill) { %>
+      <li>
+        <a href="/skills/<%= skill._id %>"><%= skill.text %></a>
+          - 
+        <%= skill.done ? 'done' : 'not done' %>
+      </li>
+    <% }) %>
+  </ul>
+
+<%- include("../partials/footer.ejs") %> 
