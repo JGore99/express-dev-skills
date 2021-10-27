@@ -7,7 +7,8 @@ function index(req, res) {
     res.render("skills/index", {
       skills,
       error,
-      title: "Skills Index"
+      title: "Skills Index",
+      time: req.time
     })
   })
 }
@@ -22,7 +23,28 @@ function show(req, res) {
   })
 }
 
+function newSkill(req, res) {
+  res.render("skills/new", {
+    title: "Skillz +1"
+  })
+}
+
+function create(req, res) {
+  skillsDb.create(req.body, function(error, skill){
+    res.redirect("/skills")
+  })
+}
+
+function deleteSkill(req, res) {
+  skillsDb.findByIdAndDelete(req.params.id, function(error, skill) {
+    res.redirect('/skills')
+  })
+}
+
 export {
   index,
-  show
+  show,
+  newSkill as new,
+  create,
+  deleteSkill as delete
 }
