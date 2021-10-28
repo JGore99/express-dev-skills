@@ -1,0 +1,15 @@
+<!-- SKILLS EDIT.EJS -->
+
+<%- include("../partials/header.ejs") %> 
+  
+<h1>Skills</h1>
+  <% if(error) { %>
+    <h2><%= error %></h2>
+  <% } else { %>
+    <h2>Skills #<%= skill._id %></h2>
+    <h3><%= skill.text %></h3>
+    <p>Complete: <%= skill.done ? 'Yes' : 'No' %></p>
+  <% } %>
+	<a href="/skills">Go back</a>
+
+<%- include("../partials/footer.ejs") %> 

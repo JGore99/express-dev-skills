@@ -1,7 +1,7 @@
 const skills = [
-  {text: 'Pay the bills', done: true, _id: 125223},
-  {text: 'Getting Funky', done: false, _id: 127904},
-  {text: 'Putting the funk on hold', done: false, _id: 139608},
+  {text: 'To pay the bills', done: true, _id: 125223},
+  {text: 'Cheese', done: false, _id: 127904},
+  {text: 'Stubbing my toe', done: false, _id: 139608},
 ]
 
 const find = (conditions, callback) => {
@@ -49,10 +49,9 @@ function findByIdAndDelete(id, callback) {
   }
 }
 
-
 export { 
 	find,
   findById,
   create,
-  findByIdAndDelete
+  findByIdAndDelete,
 }

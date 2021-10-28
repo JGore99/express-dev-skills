@@ -46,5 +46,6 @@ export {
   show,
   newSkill as new,
   create,
-  deleteSkill as delete
+  deleteSkill as delete,
 }
+
